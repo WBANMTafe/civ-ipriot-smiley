@@ -202,24 +202,22 @@ python3 main.py
 
 3. Give two examples of organizational documentation in the code.
 
-> An example of 4 spaces of indentations is:
+> An example of organization documentation in the code is the docstring in main.py the introduction:
 > <pre>
-> class Smiley:
->     WHITE = (255,255,255)
+> """Demonstrates the use of the Smiley class and its subclasses.
+> If you have access to a SenseHAT (either via a Raspberry Pi or a SenseHAT emulator), you can use the real SenseHAT class instead of the mock SenseHAT class.
+> That is, delete the sense_hat.py file that is included in this bundle."""
 > </pre>
-> An example of methods/function has one blank line is:
+> Another example is in the main.py which are the comments:
 > <pre>
-> class Smiley:
->   WHITE = (255, 255, 255)
->   GREEN = (0, 255, 0)
->   RED = (255, 0, 0)
->   YELLOW = (255, 255, 0)
->   BLANK = (0, 0, 0)
->
->   def __init__(self):
->       # We have encapsulated the SenseHat object
->       self.sense_hat = SenseHat()
+>if __name__ == '__main__':
+>   ############################################################
+>   # Uncomment the lines below only if you have multi-processing issues
+>   # from multiprocessing import freeze_support
+>   # freeze_support()
+>   ############################################################
 > </pre>
+> And another example will be the LICENSE document in the project (however, I am unsure it is an example of this question as it is not in the code)
 
 ### Identifying and understanding classes
 
@@ -230,12 +228,12 @@ python3 main.py
   Use the following table for your answers:
 
 | Class Name | Super or Sub? | Direct parent(s)   |
-|-----------|--------------|--------------------|
-| NotReal   | Sub          | NotRealParent      |
-| Happy     | Sub          | Smiley & Blinkable |
-| Sad       | Sub          | Smiley             |
-| Blinkable | Parent       | N/A                |
-| Smiley    | Parent       | N/A                |
+|-----------|---------------|--------------------|
+| NotReal   | Sub           | NotRealParent      |
+| Happy     | Sub           | Smiley & Blinkable |
+| Sad       | Sub           | Smiley             |
+| Blinkable | Sub           | ABC                |
+| Smiley    | Parent        | N/A                |
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
